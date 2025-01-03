@@ -1,4 +1,4 @@
-package ScienceFair.ScienceFair;
+
 
 import java.io.FileInputStream;
 import java.io.IOException;
