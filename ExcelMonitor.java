@@ -14,7 +14,7 @@ public class ExcelMonitor {
 	public static void main(String[] args) {
 		
 	
-	String filePath = "D:\\Xaltius(New)\\Material\\NTUC\\CNATIVE\\DevOps Introduction\\ScienceFair.xlsx"; // Path to the Excel file
+	String filePath = "ScienceFair.xlsx"; // Path to the Excel file
 
     try (FileInputStream fis = new FileInputStream(filePath);
          Workbook workbook = new XSSFWorkbook(fis)) {
