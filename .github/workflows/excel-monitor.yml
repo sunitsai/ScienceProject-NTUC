@@ -1,0 +1,32 @@
+name: Excel File Validator
+
+on:
+  push:
+    paths:
+      - science_fair.xlsx
+
+jobs:
+  validate_excel:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set Up Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '17'
+
+    - name: Install Apache POI Library
+      run: |
+        mkdir lib
+        curl -L https://repo1.maven.org/maven2/org/apache/poi/poi/5.2.3/poi-5.2.3.jar -o lib/poi.jar
+        curl -L https://repo1.maven.org/maven2/org/apache/poi/poi-ooxml/5.2.3/poi-ooxml-5.2.3.jar -o lib/poi-ooxml.jar
+
+    - name: Compile Java Program
+      run: javac -cp lib/poi.jar:lib/poi-ooxml.jar:. ExcelMonitor.java
+
+    - name: Run Java Program
+      run: java -cp lib/poi.jar:lib/poi-ooxml.jar:. ExcelMonitor
