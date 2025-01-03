@@ -3,7 +3,7 @@ name: Excel File Validator
 on:
   push:
     paths:
-      - science_fair.xlsx
+      - ScienceFair.xlsx
 
 jobs:
   validate_excel:
