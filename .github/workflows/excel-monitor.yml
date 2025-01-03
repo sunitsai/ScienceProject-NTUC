@@ -26,7 +26,7 @@ jobs:
         curl -L https://repo1.maven.org/maven2/org/apache/poi/poi-ooxml/5.2.3/poi-ooxml-5.2.3.jar -o lib/poi-ooxml.jar
 
     - name: Compile Java Program
-      run: javac -cp lib/poi.jar:lib/poi-ooxml.jar:. ExcelMonitor.java
+      run: javac -cp lib/poi.jar:lib/poi-ooxml.jar: ExcelMonitor.java
 
     - name: Run Java Program
-      run: java -cp lib/poi.jar:lib/poi-ooxml.jar:. ExcelMonitor
+      run: java -cp lib/poi.jar:lib/poi-ooxml.jar: ExcelMonitor
